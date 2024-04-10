@@ -1,0 +1,1 @@
+Is a project copy of the quotes.toscrape.com website using the Django framework. Additionally, the possibility of registering on the site was added. Authorized users get additional functionality, such as adding quotes and authors, searching by tags.
