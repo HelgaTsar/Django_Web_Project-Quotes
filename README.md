@@ -23,6 +23,6 @@ This Django web project is a replica of the [http://quotes.toscrape.com](http://
        python manage.py runserver
 
 
-5. Visit the Quotes Hub at `http://127.0.0.1:8000/` to explore the implemented features.
+5. Visit the Quotes at `http://127.0.0.1:8000/` to explore the implemented features.
 
 
