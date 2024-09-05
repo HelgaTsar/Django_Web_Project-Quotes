@@ -6,6 +6,14 @@ body {
     font-family: sans-serif;
 }
 
+body {
+    background-color: #f7f8fa;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
 .row {
     margin-left: -15px;
     margin-right: -15px;
@@ -28,11 +36,11 @@ body {
 
 .quote small.author {
     font-weight: bold;
-    color: #3677E8;
+    color: #7CA3E6;
 }
 
 a {
-    color: #4582ec;
+    color: #7CA3E6;
     text-decoration: none;
 }
 
@@ -58,11 +66,10 @@ a {
 }
 
 a {
-    color: #4582ec;
+    color: #7CA3E6;
     text-decoration: none;
 }
 
 a {
     background-color: transparent;
 }
-

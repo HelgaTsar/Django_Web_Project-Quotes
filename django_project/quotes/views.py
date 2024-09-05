@@ -8,23 +8,23 @@ from .forms import AuthorForm, QuoteForm
 
 from .utils import get_mongodb
 
-def get_top_10_tags():
-    top_10_tags = Tag.objects.annotate(amount_quotes=Count("quote")).order_by("-amount_quotes")[:10]
+def get_top_5_tags():
+    top_5_tags = Tag.objects.annotate(amount_quotes=Count("quote")).order_by("-amount_quotes")[:10]
     font_sizes = list(range(28, 9, -2))
-    for i, tag in enumerate(top_10_tags):
+    for i, tag in enumerate(top_5_tags):
         tag.font_size = font_sizes[i]
-    return top_10_tags
+    return top_5_tags
 
 
 def main(request, page=1):
     quotes = Quote.objects.all()
-    top_10_tags = get_top_10_tags()
+    top_5_tags = get_top_5_tags()
 
-    per_page = 10
+    per_page = 5
     paginator = Paginator(list(quotes), per_page)
     quotes_on_page = paginator.page(page)
 
-    context = {"quotes": quotes_on_page, "top_tags": top_10_tags}
+    context = {"quotes": quotes_on_page, "top_tags": top_5_tags}
     return render(request, "quotes/index.html", context)
 
 

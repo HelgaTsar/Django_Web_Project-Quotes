@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md">
         {% for quote in quotes %}
-         <div class="quote" itemscope="" itemtype="http://schema.org/CreateveWork">
+         <div class="quote" itemscope="" itemtype="http://schema.org/CreativeWork">
              <span class="text" itemprop="text">
                  {{quote.quote}}
              </span>
@@ -23,27 +23,25 @@
         <ul class="pagination d-flex justify-content-between">
             <li class="page-item">
                 <a href="{% if quotes.has_previous %} {% url 'quotes:index_paginate' quotes.previous_page_number %} {% endif %}"
-                class="page-link {% if not quotes.has_previous %} # {% endif %}">
+                class="btn-previous page-link {% if not quotes.has_previous %} disabled {% endif %}">
                     <span aria-hidden="true">←</span> Previous
                 </a>
             </li>
             <li class="page-item">
                 <a href="{% if quotes.has_next %} {% url 'quotes:index_paginate' quotes.next_page_number %} {% endif %}"
-                class="page-link {% if not quotes.has_next %} # {% endif %}">
+                class="btn-next page-link {% if not quotes.has_next %} disabled {% endif %}">
                 Next <span aria-hidden="true">→</span></a>
             </li>
         </ul>
     </nav>
     </div>
     <div class="col-md-4 tags-box">
-
         <h2>Top Ten tags</h2>
         {% for tag in top_tags %}
         <span class="tag-item">
             <a class="tag" style="font-size: {{tag.font_size}}px" href="/tag/{{tag.name}}">{{tag.name}}</a>
         </span>
         {% endfor %}
-
     </div>
 </div>
 {% endblock content %}

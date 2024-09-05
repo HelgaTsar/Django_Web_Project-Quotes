@@ -2,7 +2,7 @@
 name = "django_project"
 version = "3.10"
 description = ""
-authors = ["Olha <142577158+HelgaTsar@users.noreply.github.com>"]
+authors = ["Olha <https://github.com/HelgaTsar>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
